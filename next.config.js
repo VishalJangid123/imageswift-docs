@@ -2,6 +2,7 @@ const withNextra = require('nextra')({
   theme: 'nextra-theme-docs',
   themeConfig: './theme.config.tsx',
   distDir: "out",
+  defaultShowCopyCode: true
 })
 
 module.exports = {
@@ -11,6 +12,4 @@ module.exports = {
   },
   assetPrefix : "/imageswift-docs/",
   basePath: "/imageswift-docs"
-
 };
-

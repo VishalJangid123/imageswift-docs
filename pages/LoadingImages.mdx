@@ -1,0 +1,62 @@
+# Loading images to component using ImageSwift
+
+## Overview
+
+In **ImageSwift**, loading images into Unity GameObjects and sprites is a straightforward process. This section provides guidance on using the library to dynamically load and display images within your Unity project.
+
+```csharp filename="C#"
+ImageSwift.Load(string: url).Into(targetComponent);
+```
+
+Learn more about these functions down.
+
+### `Load()`
+
+The `Load` function is the starting point for fetching an image in ImageSwift. It is a static method that returns an instance of the `ImageSwift` class, allowing you to chain additional methods for customization.
+
+#### Syntax:
+
+```csharp filename="C#"
+ImageSwift.Load(string url);
+```
+
+Parameter
+`url`  (string): The URL of the image to be loaded.
+
+##### Example:
+```csharp filename="C#"
+ImageSwift.Load("https://example.com/image.jpg");
+```
+This initiates the process of loading the image from the specified URL.
+
+### `Into()`
+The Into function is used to specify the target where the loaded image should be applied. It supports various Unity components, allowing you to display images in different contexts.
+
+##### Example:
+```csharp filename="C#"
+ImageSwift Into(GameObject gameObject);
+ImageSwift Into(SpriteRenderer spriteRenderer);
+ImageSwift Into(RawImage rawImage);
+ImageSwift Into(Image uiImage);
+ImageSwift Into(Sprite sprite);
+```
+
+Examples:
+```csharp filename="C#"
+// Loading into a SpriteRenderer
+ImageSwift.Load("https://example.com/image.jpg").Into(spriteRenderer);
+
+// Loading into a RawImage
+ImageSwift.Load("https://example.com/image.jpg").Into(rawImageGameObject);
+
+// Loading into a Unity UI Image
+ImageSwift.Load("https://example.com/image.jpg").Into(uiImage);
+
+// Loading into a sprite
+ImageSwift.Load("https://example.com/image.jpg").Into(sprite);
+
+```
+This determines where the loaded image should be displayed based on the specified target.
+
+ImageSwift provides callbacks for certain events learn about them more [here](/callback). 
+

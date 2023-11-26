@@ -1,7 +1,8 @@
 {
   "index": "Introduction",
-  "ImageLoading": "Image loading using ImageSwift",
-  "advanced": "Advanced (A Folder)",
+  "installation": "Add ImageSwift To Unity",
+  "LoadingImages": "Loading images",
+  "configuration": "Configuration",
   "about": {
     "title": "About",
     "type": "page"
