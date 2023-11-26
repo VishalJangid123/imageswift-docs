@@ -1,0 +1,15 @@
+{
+  "index": "Introduction",
+  "ImageLoading": "Image loading using ImageSwift",
+  "advanced": "Advanced (A Folder)",
+  "about": {
+    "title": "About",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Contact ↗",
+    "type": "page",
+    "href": "",
+    "newWindow": true
+  }
+}

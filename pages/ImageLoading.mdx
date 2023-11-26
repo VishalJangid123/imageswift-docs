@@ -1,0 +1,30 @@
+# Image Loading in ImageSwift
+
+## Overview
+
+In **ImageSwift**, loading images into Unity GameObjects and sprites is a straightforward process. This section provides guidance on using the library to dynamically load and display images within your Unity project.
+
+## Loading Images into GameObjects
+
+### Loading into RawImage
+
+To load an image into a Unity `RawImage` component, use the following code:
+
+```csharp
+ImageSwift.Load("https://example.com/image.jpg").Into(rawImageGameObject);
+```
+
+This loads the image from the specified URL and sets it as the texture for the RawImage component attached to the given GameObject.
+
+Loading into SpriteRenderer
+To load an image into a Unity SpriteRenderer component, you can use the following code:
+```csharp
+ImageSwift.Load("https://example.com/image.jpg").Into(spriteRendererGameObject);
+```
+
+This loads the image from the specified URL and sets it as the sprite for the SpriteRenderer component attached to the given GameObject.
+
+
+
+
+
