@@ -59,6 +59,21 @@ When "Scale" is chosen as the hover type, two additional properties become avail
 #### Filters (Coming Soon)
 The "Filters" hover type is currently under development and will be available in future updates.
 
+
+## Load Image at runtime using ImageSwiftImage
+1. Get the ImageSwiftImage component reference.
+2. Call `LoadImage`
+
+```chsarp filename="C#"
+_imageSwiftImage // Reference of ImageSwiftImage  
+
+// Download the image from the url
+_imageSwiftImage.LoadImage(url);
+
+// Allow image hover
+_imageSwiftImage.SetHover(ImageSwiftImage.HoverType.Scale, 1.2f, () => { Debug.Log("Hovered"); });
+```
+
 ### Notes
 <Alert>
 Ensure that the Unity UI Image component has **Raycast Target** enabled to receive hover events.
