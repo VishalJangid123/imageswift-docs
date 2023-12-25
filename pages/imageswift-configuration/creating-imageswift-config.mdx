@@ -1,0 +1,14 @@
+# Create a new ImageSwift Configuration
+
+Developers can create new config file and refrence it to Imageswift instance.
+
+To create new config file - Right click in Project Window, ImageSwift -> ImageSwift Config.
+
+## SetConfig
+Before making the image downloading, refrence new created config file using `SetConfig`.
+
+```csharp
+ImageSwift.SetConfig(config).Load(url).Into().Start();
+```
+Parameter:
+`ImageSwiftConfig`: ScriptableObject of `ImageSwiftConfig` type.

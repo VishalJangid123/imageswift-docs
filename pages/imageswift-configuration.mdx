@@ -1,0 +1,23 @@
+# ImageSwift Configuration
+
+## Overview
+
+**ImageSwift** provides a flexible configuration system that allows users to customize the behavior and settings of the library according to their project requirements. This section covers the configuration options available and how to use them effectively.
+
+## Configuration File
+
+The ImageSwift configuration file, located at Resources/ImageSwift Config, serves as a central repository for essential parameters that govern the behavior of the ImageSwift tool. This file allows developers to fine-tune various aspects of image downloading and caching within their Unity projects. Below are the key parameters available in the configuration file:
+
+1. `globalLoadingPlaceholder`
+The `globalLoadingPlaceholder` parameter enables developers to set a universal loading texture for all image downloads. This feature provides a cohesive and consistent loading experience throughout the application.
+
+2. `cacheType`
+The `cacheType` parameter specifies the type of caching to be employed by ImageSwift. Developers can choose between two options:  
+* **Disk**: Enables disk caching for downloaded textures, optimizing storage usage. Textures are cached into `Application.persistentDataPath + "/ImageCache/"`  
+* **Memory**: Activates memory caching, enhancing performance by storing textures in RAM.
+
+2. `maximumNumberOfTextureToCache`
+The `maximumNumberOfTextureToCache` parameter determines the maximum number of textures to be cached. This setting allows developers to control the memory footprint of the application by limiting the number of cached textures.
+
+By utilizing these parameters within the ImageSwift configuration file, developers can seamlessly configure global loading placeholders, manage the maximum number of cached textures, and choose the most suitable caching strategy. This centralized approach enhances the maintainability and professionalism of Unity projects employing ImageSwift for image integration.
+

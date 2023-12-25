@@ -1,11 +1,11 @@
-# Loading images to component using ImageSwift
+# Loading images to UI component using ImageSwift
 
 ## Overview
 
 In **ImageSwift**, loading images into Unity GameObjects and sprites is a straightforward process. This section provides guidance on using the library to dynamically load and display images within your Unity project.
 
 ```csharp filename="C#"
-ImageSwift.Load(string: url).Into(targetComponent);
+ImageSwift.Load(string: url).Into(targetComponent).Start();
 ```
 
 Learn more about these functions down.
@@ -30,33 +30,32 @@ ImageSwift.Load("https://example.com/image.jpg");
 This initiates the process of loading the image from the specified URL.
 
 ### `Into()`
-The Into function is used to specify the target where the loaded image should be applied. It supports various Unity components, allowing you to display images in different contexts.
+The Into function is used to specify the target where the loaded image should be applied. It supports various Unity components, allowing you to display images in different contexts. `Into()` has to be chained with `Load()` method to work.
 
 ##### Example:
 ```csharp filename="C#"
-ImageSwift Into(GameObject gameObject);
-ImageSwift Into(SpriteRenderer spriteRenderer);
-ImageSwift Into(RawImage rawImage);
-ImageSwift Into(Image uiImage);
-ImageSwift Into(Sprite sprite);
+ImageSwift.Load(string url).Into(GameObject gameObject).Start();
+ImageSwift.Load(string url).Into(SpriteRenderer spriteRenderer).Start();
+ImageSwift.Load(string url).Into(RawImage rawImage).Start();
+ImageSwift.Load(string url).Into(Image uiImage).Start();
+ImageSwift.Load(string url).Into(Sprite sprite).Start();
 ```
+To perform some customized operation on the texture, you can also pass `Action` callback as a parameter.
 
-Examples:
+##### Example:
 ```csharp filename="C#"
-// Loading into a SpriteRenderer
-ImageSwift.Load("https://example.com/image.jpg").Into(spriteRenderer);
-
-// Loading into a RawImage
-ImageSwift.Load("https://example.com/image.jpg").Into(rawImageGameObject);
-
-// Loading into a Unity UI Image
-ImageSwift.Load("https://example.com/image.jpg").Into(uiImage);
-
-// Loading into a sprite
-ImageSwift.Load("https://example.com/image.jpg").Into(sprite);
-
+ImageSwift.Load(string url).Into((downloadedTexture)=> {
+    Debug.Log("Do something with downloaded Texture.")
+}).Start();
 ```
-This determines where the loaded image should be displayed based on the specified target.
+
+### Start()
+`Start()` method will initiates the excution of all the method you chained. All the method chained with be run sequentially.
+
+##### Example:
+```csharp filename="C#"
+ImageSwift.Load(string url).Into(Image image).Start();
+```
 
 ImageSwift provides callbacks for certain events learn about them more [here](/callback). 
 

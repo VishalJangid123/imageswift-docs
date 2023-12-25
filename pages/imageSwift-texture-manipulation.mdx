@@ -1,0 +1,42 @@
+import Image from "next/image";
+
+# ImageSwift Texture Manipulation
+
+ImageSwift empowers developers with robust tools for manipulating textures, offering the flexibility to resize and crop images according to specific requirements. These features contribute to a dynamic and adaptive approach in handling textures within Unity projects.
+
+## Resize
+
+The resize function in ImageSwift enables developers to adjust the dimensions of a texture, providing flexibility in managing image sizes within the application. The resizing operation can be further refined using the following parameters:
+* **Fit**: Resizes the texture to fit within the specified dimensions while maintaining its aspect ratio.
+* **Cover**: Resizes the texture to cover the specified dimensions, potentially cropping parts of the image to maintain the aspect ratio.
+* **Contain**: Resizes the texture to fit within the specified dimensions, adding padding if necessary to maintain the aspect ratio.
+
+```csharp filename="C#"
+ImageSwift.Load(url)
+.Resize(900, 500, ResizeMode.Fit)
+.Into(img_shadow_50).Start();
+```
+
+Parameters:  
+`newWidth`: The target width of the resized texture.  
+`newheight`: The target height of the resized texture.  
+`resizeMode`: Enum specifying the resizing mode (Fit, Cover, or Contain).
+
+
+## Crop
+The `Crop` function in ImageSwift allows developers to precisely control the cropping of a texture, defining the starting coordinates and the new width and height of the cropped region.
+
+```csharp filename="C#"
+ImageSwift.Load(url)
+.Crop(100, 500, 2048, 2048)
+.Into(img_shadow_50).Start();
+```
+
+Parameters:  
+`startX`: The starting X-coordinate of the cropped region.  
+`startY`: The starting Y-coordinate of the cropped region.  
+`newWidth`: The new width of the cropped region.  
+`newHeight`: The new height of the cropped region.  
+
+
+<Image src="/ImageSwift-Crop.png" width={1200} height={500}/>

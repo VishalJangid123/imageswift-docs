@@ -1,0 +1,60 @@
+import Image from "next/image";
+
+# Effects and Filters
+
+ImageSwift offers a diverse set of effects and filters, allowing developers to enhance and manipulate the visual appearance of textures in Unity projects. These effects provide a range of creative possibilities, from adjusting basic attributes like brightness and contrast to applying more artistic transformations like inverting colors or converting images to sepia tones.
+
+## Brightness
+`SetBrightness` in ImageSwift enables developers to modify the overall brightness of a texture. This effect is achieved by adjusting the intensity of lightness values, resulting in a visually brighter or darker image.
+
+```csharp filename="C#"
+ImageSwift.Load(url).SetBrightness(0).Into(img_brightness_0).Start();
+ImageSwift.Load(url).SetBrightness(0.5f).Into(img_brightness_50).Start();
+ImageSwift.Load(url).SetBrightness(1).Into(img_brightness_100).Start();
+ImageSwift.Load(url).SetBrightness(1.25f).Into(img_brightness_125).Start();
+ImageSwift.Load(url).SetBrightness(1.5f).Into(img_brightness_150).Start();
+ImageSwift.Load(url).SetBrightness(2).Into(img_brightness_200).Start();
+```
+Parameters:
+* `brightnessFactor`: A float value representing the brightness adjustment factor. Values greater than 1 increase brightness, while values less than 1 decrease brightness.
+
+<Image src="/ImageSwift-Brightness.png" width={1200} height={500}/>
+
+## Contrast
+The `SetContrast` allows developers to alter the difference between light and dark areas in a texture. By adjusting the contrast, developers can create images with more pronounced or subdued tonal variations.
+
+
+```csharp filename="C#"
+ImageSwift.Load(url).SetContrast(0.5f).Into(img_brightness_50).Start();
+ImageSwift.Load(url).SetContrast(1).Into(img_brightness_100).Start();
+ImageSwift.Load(url).SetContrast(1.25f).Into(img_brightness_125).Start();
+```
+
+Parameters:
+* `contrastFactor`: A float value representing the contrast adjustment factor. Values greater than 1 increase contrast, while values less than 1 decrease contrast.
+
+## Invert Colors
+`InvertColors` provides a straightforward way to invert the colors of a texture, resulting in a visually striking and inverted representation of the original image.
+
+```csharp filename="C#"
+ImageSwift.Load(url).InvertColors().Into(img_invert).Start();
+```
+<Image src="/Imaeswift-InvertColors.png" width={1200} height={500}/>
+
+## Grayscale
+`ToGrayscale` converts a texture to grayscale, removing color information and resulting in a black-and-white image. This effect is useful for creating a classic and timeless visual aesthetic.
+
+
+```csharp filename="C#"
+ ImageSwift.Load(texture).ToGrayscale().Into(img_grayscale).Start();
+```
+<Image src="/Imaeswift-Grayscale.png" width={1200} height={500}/>
+
+## Sepia
+
+`ToSepia` imparts a warm, brownish tone to a texture, emulating the appearance of photographs from the sepia-toned era. This effect adds a vintage and nostalgic feel to the image.
+
+```csharp filename="C#"
+ ImageSwift.Load(texture).ToSepia().Into(img_sepia).Start();
+```
+<Image src="/Imaeswift-Sepia.png" width={1200} height={500}/>

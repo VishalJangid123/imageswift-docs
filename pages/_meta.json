@@ -2,7 +2,12 @@
   "index": "Introduction",
   "installation": "Add ImageSwift To Unity",
   "LoadingImages": "Loading images",
-  "configuration": "Configuration",
+  "imageswift-configuration": "ImageSwift Configuration",
+  "imageSwift-texture-manipulation": "ImageSwift Texture Manipulation",
+  "effects-and-filters": "Effects and Filters",
+  "events": "ImageSwift Events",
+  "imageswiftImage": "ImageSwift Image",
+  "imageswifteditortool": "ImageSwift Editor Tool",
   "about": {
     "title": "About",
     "type": "page"

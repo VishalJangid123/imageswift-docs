@@ -1,0 +1,112 @@
+import Alert from "../components/Alert"
+
+# ImageSwift Events and Callbacks
+
+## Overview
+
+**ImageSwift** provides a powerful event system and callback mechanism to enhance your control and customization during the image download process. This section outlines the available events and callbacks that you can utilize in your Unity project.
+
+## Request Callbacks
+### `SetLoadingPlaceholder(Texture2D: loadingTexture)`
+The `SetLoadingPlaceholder` function in ImageSwift provides a mechanism to set a loading texture. This texture serves as a temporary placeholder while an image is being downloaded and applied to a UI component. This feature enhances user experience by providing visual feedback during the loading process.
+
+<Alert>
+**Note**: This will override the global loading texture set in [ImageSwift Config](/configuration).
+</Alert>
+```csharp
+ImageSwift.Load(url).SetLoadingPlaceholder(Texture loadingTexture).Into().Start();
+```
+
+Parameters:
+* `loadingTexture` : The loading texture to be displayed during the download and application process.
+
+### `AddCustomHeader(string: headerName, string: headerValue)`
+The `AddCustomHeader` function allows you to include a custom header in the download request. This feature provides flexibility for users who may require additional customization or authentication when fetching images.
+
+```csharp
+ImageSwift.Load(url)
+.AddCustomHeader("Authorization", "Token " + funcToGetToken)
+.Into().Start();
+```
+
+Parameters:
+* `headerName` : The name of the custom header to be added.
+* `headerValue` : The value associated with the custom header.
+
+
+### `SetCacheType`
+ImageSwift offers the ability to cache downloaded textures for improved performance. The caching mechanism supports both disk and memory caching options, providing users with control over how downloaded textures are stored and retrieved.
+
+<Alert>
+**Note**: This will override the global cache defined in [ImageSwift Config](/configuration). for this image download request only.
+</Alert>
+
+```csharp
+ImageSwift.Load(url)
+.SetCacheType(CacheType _cacheType)
+.Into().Start();
+```
+
+Parameters:
+* `cacheType` : Enum representing the desired caching type. Options include:
+1.  **Disk** : Enables disk caching for downloaded textures.
+2. **Memory** : Enables memory caching for downloaded textures.
+
+
+
+## Download Callbacks
+
+### `DownloadStarted`
+
+The `DownloadStarted` event is triggered when the image download process begins.
+
+Example:
+
+```csharp
+ImageSwift.Load("https://example.com/image.jpg")
+    .OnDownloadStarted(() => Debug.Log("Image download started"))
+    .Into(spriteRenderer).Start();
+```
+
+### `DownloadProgress`
+The DownloadProgress event provides real-time updates on the download progress.
+
+Example:
+```csharp
+ImageSwift.Load("https://example.com/image.jpg")
+    .OnDownloadProgress(progress => Debug.Log($"Download progress: {progress * 100}%"))
+    .Into(spriteRenderer).Start();
+```
+### `DownloadCompleted`
+The DownloadCompleted event is triggered when the image download is successfully completed.
+
+Example:
+```csharp
+ImageSwift.Load("https://example.com/image.jpg")
+    .OnDownloadCompleted(() => Debug.Log("Image download completed"))
+    .Into(spriteRenderer).Start();
+```
+
+### `SetCustomHeader`
+The SetCustomHeader accepts List of headers that can be attached during making the request to download the image.
+
+Example:
+```csharp
+List<string, string> myCustomHeader = new List<string, string>();
+myCustomHeader.Add("Authorization", "Bearer" + customAccessToken);
+
+ImageSwift.Load("https://example.com/image.jpg")
+    .SetCustomHeader(myCustomHeader)m 
+    .Into(spriteRenderer).Start();
+```
+
+### Combining Events 
+You can combine events for a more comprehensive download handling:
+```csharp
+ImageSwift.Load("https://example.com/image.jpg")
+    .OnDownloadStarted(() => Debug.Log("Image download started"))
+    .OnDownloadProgress(progress => Debug.Log($"Download progress: {progress * 100}%"))
+    .OnDownloadCompleted(() => Debug.Log("Image download completed"))
+    .Into(spriteRenderer).Start()
+    ;
+```

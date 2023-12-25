@@ -10,13 +10,13 @@
 
 1. Download the latest release of ImageSwift from the [GitHub repository](https://github.com/your-username/ImageSwift/releases).
 
-2. Import the ImageSwift package into your Unity project.
+2. Import the ImageSwift package into your Unity project. [See how to import ImageSwift to Unity](/installation).
 
 ### Usage
 
 1. **Loading Images:**
 
-   To load an image from a URL and apply it to a SpriteRenderer:
+   To load an image from a URL and apply it to a Unity UI Image/RawImage:
 
    ```csharp
-   ImageSwift.Load("https://example.com/image.jpg").Into(spriteRenderer);
+   ImageSwift.Load("https://example.com/image.jpg").Into(image).Start();

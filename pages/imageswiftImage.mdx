@@ -1,0 +1,63 @@
+
+import Image from "next/image";
+import Alert from "../components/Alert.tsx"
+
+
+
+# ImageSwiftImage Component
+
+## Overview
+
+The `ImageSwiftImage` component is an integral part of the **ImageSwift** library, designed to simplify the process of loading and displaying images in Unity UI elements in editor and runtime. This component extends the Unity UI `Image` component and seamlessly integrates with the `ImageSwift` library, providing enhanced functionality for image handling.
+
+## Getting Started
+
+### Adding ImageSwiftImage to your GameObject
+
+* Drap and drop ImageSwiftImage script from the Projects
+or
+* In Inspector, click on `Add Component` - search for ImageSwiftImage.
+
+### Basic Usage
+
+The `ImageSwiftImage` component can be used directly within the Unity Editor. Simply attach it to a Unity UI `Image` GameObject, and you're ready to load and display images effortlessly.
+
+### Loading Images
+
+Load an image into the `ImageSwiftImage` component using the following steps:
+
+1. Select the GameObject with the `ImageSwiftImage` component.
+
+2. In the Inspector window, find the `ImageSwiftImage` component.
+
+3. Input the image URL in the `Image URL` field.
+
+4. Click on `Load Image` button.
+
+<Image src="/ImageSwiftImage-Loading Image.gif" width={1200} height={500}/>
+
+## Features
+
+## On Hover
+The ImageSwiftImage component enhances Unity UI Images by providing a hover feature that includes scaling and filter change transitions. This allows developers to create interactive and dynamic user interfaces with ease.
+
+#### Use Hover in ImageSwiftImage component
+1. Attach the ImageSwiftImage script to a Unity UI Image component.
+2. In the Unity Inspector, locate the "Allow hover" checkbox. Check this box to enable hover functionality.
+3. From the dropdown menu next to "Hover type," select the desired hover effect. Currently, ImageSwiftImage supports scale transitions on hover.
+
+#### Scale Hover
+When "Scale" is chosen as the hover type, two additional properties become available:
+
+**Hover Scale Factor:** Adjust the hoverScaleFactor to control the degree of scaling during the hover effect. A value of 1.0 represents no scaling, while values greater than 1.0 increase the size, and values less than 1.0 decrease the size.
+
+**Hover Transition Duration:** Set the hoverTransitionDuration to determine the duration of the scaling animation during the hover effect. This value controls the speed of the scaling animation.
+
+
+#### Filters (Coming Soon)
+The "Filters" hover type is currently under development and will be available in future updates.
+
+### Notes
+<Alert>
+Ensure that the Unity UI Image component has **Raycast Target** enabled to receive hover events.
+</Alert>
