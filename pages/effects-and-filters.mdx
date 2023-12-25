@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 # Effects and Filters
 
 ImageSwift offers a diverse set of effects and filters, allowing developers to enhance and manipulate the visual appearance of textures in Unity projects. These effects provide a range of creative possibilities, from adjusting basic attributes like brightness and contrast to applying more artistic transformations like inverting colors or converting images to sepia tones.
@@ -18,7 +16,7 @@ ImageSwift.Load(url).SetBrightness(2).Into(img_brightness_200).Start();
 Parameters:
 * `brightnessFactor`: A float value representing the brightness adjustment factor. Values greater than 1 increase brightness, while values less than 1 decrease brightness.
 
-<Image src="/ImageSwift-Brightness.png" width={1200} height={500}/>
+![Brightness](/ImageSwift-Brightness.png)
 
 ## Contrast
 The `SetContrast` allows developers to alter the difference between light and dark areas in a texture. By adjusting the contrast, developers can create images with more pronounced or subdued tonal variations.
@@ -39,7 +37,7 @@ Parameters:
 ```csharp filename="C#"
 ImageSwift.Load(url).InvertColors().Into(img_invert).Start();
 ```
-<Image src="/Imaeswift-InvertColors.png" width={1200} height={500}/>
+![Invert Colors](/Imaeswift-InvertColors.png)
 
 ## Grayscale
 `ToGrayscale` converts a texture to grayscale, removing color information and resulting in a black-and-white image. This effect is useful for creating a classic and timeless visual aesthetic.
@@ -48,7 +46,7 @@ ImageSwift.Load(url).InvertColors().Into(img_invert).Start();
 ```csharp filename="C#"
  ImageSwift.Load(texture).ToGrayscale().Into(img_grayscale).Start();
 ```
-<Image src="/Imaeswift-Grayscale.png" width={1200} height={500}/>
+![Grayscale](/Imaeswift-Grayscale.png)
 
 ## Sepia
 
@@ -57,4 +55,4 @@ ImageSwift.Load(url).InvertColors().Into(img_invert).Start();
 ```csharp filename="C#"
  ImageSwift.Load(texture).ToSepia().Into(img_sepia).Start();
 ```
-<Image src="/Imaeswift-Sepia.png" width={1200} height={500}/>
+![Sepia](/Imaeswift-Sepia.png)
