@@ -31,11 +31,11 @@ const config: DocsThemeConfig = {
     <meta property="twitter:description" content="Optimize Unity visuals effortlessly! ImageSwift offers dynamic image manipulation, creative effects, and seamless integration for a polished user experience. Elevate your Unity projects with ease. #UnityImageProcessing #GameDev #GraphicsTools #ImageSwift" />
     <meta property="twitter:image" content="https://vishaljangid123.github.io/portfolio//Images/ImageSwift_cover.png" />
     
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/imageswift-docs/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/imageswift-docs/icons/favicon-16x16.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/imageswift-docs/icons/favicon.ico" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-MLE4PNXL6G"></script>
-        <script src="/ga.js"></script>
+        <script src="/imageswift-docs/ga.js"></script>
 
       
   </>
